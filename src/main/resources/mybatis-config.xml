@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<!-- mybatis的主配置文件 -->
+<configuration>
+
+    <typeAliases>
+        <!-- 批量起别名  -->
+        <package name="com.xinqi.domain"/>
+    </typeAliases>
+
+    <!-- 配置环境 -->
+    <environments default="mysql">
+        <!-- 配置mysql的环境-->
+        <environment id="mysql">
+            <!-- 配置事务的类型-->
+            <transactionManager type="JDBC"/>
+            <!-- 配置数据源（连接池） -->
+            <dataSource type="POOLED">
+                <!-- 配置连接数据库的4个基本信息 -->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url"
+                          value="jdbc:mysql://175.178.236.67:3306/ssm?useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="Qqq592342403"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <package name="com/xinqi/mapper"/>
+    </mappers>
+</configuration>

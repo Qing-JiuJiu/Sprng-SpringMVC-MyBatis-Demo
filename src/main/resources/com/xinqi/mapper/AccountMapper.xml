@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--这是一个xmlmapper映射文件。-->
+
+<!--
+    接口代理方式：
+        namespace:名称空间，该值是mapper接口的全路径-->
+<mapper namespace="com.xinqi.mapper.AccountMapper">
+    <insert id="insert">
+        insert into t_account(name,age,balance) values (#{name},#{age},#{balance})
+    </insert>
+
+
+    <select id="selectAll" resultType="com.xinqi.domain.Account">
+        select
+            id,name,age,balance
+        from
+            t_account
+    </select>
+</mapper>
